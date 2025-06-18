@@ -1,0 +1,375 @@
+/* Fundo de partículas ocupa toda a tela */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+/* Seu CSS atual: */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #1f1f2e;
+  color: #eee;
+}
+
+/* Header com layout flex: nome à esquerda, menu à direita */
+header {
+  background-color: #27273a;
+  padding: 20px 40px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 600;
+  color: #6c63ff;
+  font-size: 1.8rem;
+}
+
+/* Menu de navegação alinhado à direita */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #eee;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #6c63ff;
+  color: white;
+}
+
+/* Main com padding e max-width */
+main {
+  max-width: 900px;
+  margin: 20px auto 40px auto;
+  padding: 0 20px;
+}
+
+/* Seção início com layout flex, imagem à esquerda, texto à direita */
+#inicio {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+#inicio img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6c63ff;
+  flex-shrink: 0;
+}
+
+.intro-text {
+  max-width: 650px;
+}
+
+.intro-text h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+  color: #6c63ff;
+  font-weight: 700;
+}
+
+.intro-text h3 {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
+.intro-text p {
+  margin-top: 16px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* Contato na seção início alinhado à esquerda, abaixo do texto */
+.contato-info {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.contato-item svg {
+  fill: #6c63ff;
+  width: 20px;
+  height: 20px;
+}
+
+/* Seção habilidades */
+#habilidades {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+#habilidades h2 {
+  color: #6c63ff;
+  margin-bottom: 24px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 40px auto;
+  max-width: 700px;
+}
+
+.skill-list span {
+  background-color: #27273a;
+  color: #eee;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.skill-list span.active {
+  background-color: #6c63ff;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Seção experiências */
+.experiencias-section {
+  padding: 20px;
+  background-color: #2b2b45;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #ddd;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #6c63ff;
+}
+
+.experiencia-card {
+  background-color: #1f1f2e;
+  margin-bottom: 20px;
+  padding: 18px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.data-badge {
+  background-color: #6c63ff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.cargo {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+/* Seção contato com formulário */
+#contato {
+  background-color: #2b2b45;
+  padding: 40px 20px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  color: #ddd;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+#contato p {
+  margin-bottom: 24px;
+  color: #ccc;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1f1f2e;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.form-contato input::placeholder,
+.form-contato textarea::placeholder {
+  color: #999;
+}
+
+.form-contato button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-contato button:hover {
+  background-color: #5750e5;
+}
+
+/* Seção Projetos */
+#projetos {
+  padding: 40px 20px;
+  background-color: #2b2b45;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  color: #ddd;
+}
+
+#projetos .section-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #6c63ff;
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.projeto-card {
+  background-color: #1f1f2e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.projeto-card h3 {
+  margin-top: 0;
+  color: #6c63ff;
+}
+
+.projeto-card p {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.projeto-card a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #6c63ff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.projeto-card a:hover {
+  background-color: #5548e0;
+}
+
+/* Responsividade simples */
+@media (max-width: 700px) {
+  #inicio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contato-info {
+    justify-content: center;
+  }
+
+  header .header-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-img {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .hero-img img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #6c63ff;
+    flex-shrink: 0;
+    max-width: 100%;
+    height: auto;
+  }
+}

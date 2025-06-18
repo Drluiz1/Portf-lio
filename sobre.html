@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio com Partículas</title>
+  
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fundo de partículas -->
+  <div id="particles-js"></div>
+
+  <!-- Conteúdo do site -->
+  <header>
+    <div class="header-content">
+      <h1>Luiz Augusto</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#experiencias">Experiências</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- Importa a biblioteca particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Configuração do particles.js -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#6c63ff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#6c63ff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
+
+
+  <main>
+    <section id="inicio">
+      <img src="Imagem do WhatsApp de 2025-05-24 à(s) 11.47.10_880f67c7 - Copia.jpg" alt="Foto Luiz Augusto" class="foto-perfil" />
+      <div class="intro-text">
+        <h1>Luiz Augusto</h1>
+        <h3>Analista de Dados / Analista de TI</h3>
+        <p>
+Profissional de Tecnologia da Informação focado em Análise de Dados, utilizando Python, SQL, Power BI e Excel para transformar dados em insights estratégicos. Desenvolvo projetos autorais nas áreas de esportes e games, além de criar conteúdos educativos com abordagem visual e criativa. Sempre em busca de aprendizado e novos desafios na área de TI.
+
+        </p>
+      </div>
+
+      <div class="contato-info">
+        <div class="contato-item" title="Telefone">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.54.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.54 1 1 0 01-.21 1.11z"/></svg>
+          <span>(65) 99211-9035</span>
+        </div>
+        <div class="contato-item" title="E-mail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/></svg>
+          <span>luizaugustoo2019@gmail.com</span>
+        </div>
+        <div class="contato-item" title="Localização">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 112.5-2.5 2.5 2.5 0 01-2.5 2.5z"/></svg>
+          <span>Lucas do Rio Verde - MT</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="skill-list">
+        <span>Analista de Dados</span>
+        <span>Excel</span>
+        <span>Power Query</span>
+        <span>Power BI</span>
+        <span>DAX</span>
+        <span>SQL</span>
+        <span>Python</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>ETL</span>
+        <span>SAP</span>
+        <span>Coupa</span>
+      </div>
+    </section>
+
+    <section id="experiencias" class="experiencias-section">
+      <h2 class="section-title">Experiências</h2>
+
+      <div class="experiencia-card">
+        <div class="card-header">
+          <h3>Estagiário de Suprimentos</h3>
+          <span class="data-badge">2023 - 2024</span>
+        </div>
+        <p class="cargo">FS Bioenergia</p>
+        <p class="descricao">
+          <strong>Inteligência de Compras:</strong><br>
+          Análise e tratamento de dados com Excel, Power Query e Power BI para otimizar processos e apoiar decisões. Uso das plataformas Coupa e SAP para controle de compras. Suporte a fornecedores e reprocessamento de pedidos com erros.<br><br>
+          <strong>Compras e Negociação:</strong><br>
+          Negociação com fornecedores, apoio nos processos operacionais e aquisição de itens diversos, focando em eficiência, qualidade e redução de custos.
+        </p>
+      </div>
+
+      <div class="experiencia-card">
+        <div class="card-header">
+          <h3>GGF</h3>
+          <span class="data-badge">2024 - 2025</span>
+        </div>
+        <p class="cargo">Analista de Ti Jr.</p>
+        <p class="descricao">
+          Atuo como Analista de TI garantindo o funcionamento eficiente de sistemas e infraestrutura, com foco em manutenção preventiva e corretiva, suporte técnico e segurança da informação. Minha rotina envolve desde o diagnóstico e resolução de problemas técnicos até a otimização de recursos e apoio à tomada de decisão da gerência.
+        </p>
+      </div>
+
+      <div class="experiencia-card">
+        <div class="card-header">
+          <h3>Empresa: Engebel Construção Civil LTDA</h3>
+          <span class="data-badge">2017 - 2019</span>
+        </div>
+        <p class="cargo">Estágio em Desenvolvimento de sistemas</p>
+        <p class="descricao">
+          Atuei no desenvolvimento de interfaces web modernas e responsivas com foco em performance e experiência do usuário. Trabalhei com tecnologias como HTML, CSS, JavaScript, Bootstrap e WordPress, desenvolvendo páginas e soluções e-commerce com WooCommerce, Elementor e temas como Divi.
+        </p>
+      </div>
+    </section>
+
+ <section id="projetos">
+  <h2 class="section-title">Projetos</h2>
+
+  <div class="projetos-grid">
+    <div class="projeto-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Análise Financeira" class="projeto-img" />
+      <h3>Análise Financeira</h3>
+      <p>Relatório interativo com análise de faturamento, metas e desempenho por região.</p>
+      <a href="https://github.com/Drluiz1/DevLuiz/blob/main/Dashboard%20Projetos.pbix" target="_blank">Ver no GitHub</a>
+    </div>
+
+    <div class="projeto-card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Dashboard de Vendas" class="projeto-img" />
+      <h3>Dashboard de Vendas</h3>
+      <p>Visualização de fluxo de caixa, custos fixos e variáveis com filtros dinâmicos.</p>
+      <a href="https://github.com/Drluiz1/DevLuiz/blob/main/Relat%C3%B3rio%20de%20Vendas.pbix" target="_blank">Ver no GitHub</a>
+    </div>
+
+    <div class="projeto-card">
+      <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=400&q=80" alt="Indicadores de RH" class="projeto-img" />
+      <h3>Indicadores de RH</h3>
+      <p>Dashboard de turnover, absenteísmo e perfil de colaboradores.</p>
+      <a href="https://github.com/SeuUsuario/indicadores-rh-powerbi" target="_blank">Ver no GitHub</a>
+    </div>
+
+    <div class="projeto-card">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Sistema de vendas Agro" class="projeto-img" />
+      <h3>Sistema de vendas Agro</h3>
+      <p>Sistema simples em Java para listar produtos, registrar vendas e gerar relatórios de vendas e estoque.</p>
+      <a href="https://github.com/Drluiz1/DevLuiz/blob/main/Sistema%20De%20Vendas%20Agro.java" target="_blank">Ver no GitHub</a>
+    </div>
+
+    <div class="projeto-card">
+      <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=400&q=80" alt="Chatbot" class="projeto-img" />
+      <h3>Chatbot</h3>
+      <p>Assistente virtual para apoiar programadores nas dúvidas e tarefas diárias.</p>
+      <a href="https://github.com/Drluiz1/DevLuiz/blob/main/ChatBot.rar" target="_blank">Ver no GitHub</a>
+    </div>
+
+    <div class="projeto-card">
+      <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?auto=format&fit=crop&w=400&q=80" alt="Página de Login" class="projeto-img" />
+      <h3>Página de Login e Senha</h3>
+      <p>Página de login com HTML, CSS e JavaScript para autenticação básica com feedback ao usuário.</p>
+      <a href="https://github.com/Drluiz1/DevLuiz/blob/main/My.html" target="_blank">Ver no GitHub</a>
+    </div>
+  </div>
+</section>
+
+
+
+    <section id="contato">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p>Preencha o formulário abaixo e retornarei o mais breve possível.</p>
+      
+      <form class="form-contato" action="https://formsubmit.co/luizaugustoo2019@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+        <input type="text" name="name" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Script do particles.js - CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Script de inicialização do particles.js -->
+  <script src="app.js"></script>
+
+  <script>
+    document.querySelectorAll('.skill-list span').forEach(skill => {
+      skill.addEventListener('click', () => {
+        document.querySelectorAll('.skill-list span').forEach(s => s.classList.remove('active'));
+        skill.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
