@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Luiz Augusto</title>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Variáveis de cores */
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #ffffff;
+      --accent-color: #6c63ff;
+      --card-bg: #1a1a1a;
+      --link-hover: #9a8cff;
+    }
+    body.light {
+      --bg-color: #ffffff;
+      --text-color: #111111;
+      --card-bg: #f5f5f5;
+      --link-hover: #5a43d2;
+    }
+
+    /* Reset e base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 60px; /* espaço para o botão */
+    }
+
+    /* Fundo de partículas */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      z-index: -1;
+      background: var(--bg-color);
+      transition: background-color 0.3s;
+    }
+
+    /* Botão alternar tema */
+    #theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: none;
+      font-size: 24px;
+      padding: 12px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 1000;
+    }
+    #theme-toggle:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      padding: 20px;
+      background-color: var(--card-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      transition: background-color 0.3s;
+    }
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Main e seções */
+    main {
+      max-width: 1000px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* Seção Início */
+    #inicio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .foto-perfil {
+      width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+    }
+    .intro-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .intro-text h1 {
+      margin-top: 0;
+      font-size: 2.5rem;
+    }
+    .intro-text h3 {
+      margin-top: 5px;
+      font-weight: 500;
+      color: var(--accent-color);
+    }
+    .intro-text p {
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    /* Contato info ícones */
+    .contato-info {
+      margin-top: 20px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .contato-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      cursor: default;
+      user-select: none;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    .contato-item svg {
+      fill: var(--accent-color);
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Habilidades */
+    #habilidades h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 15px;
+    }
+    .skill-list span {
+      background-color: var(--card-bg);
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .skill-list span:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+    .skill-list span.active {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    /* Experiências */
+    #experiencias {
+      max-width: 1000px;
+    }
+    #experiencias .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .experiencia-card {
+      background-color: var(--card-bg);
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+    }
+    .experiencia-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .card-header h3 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+    }
+    .data-badge {
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      user-select: none;
+    }
+    .cargo {
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .descricao {
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* Projetos */
+    #projetos {
+      max-width: 1000px;
+    }
+    #projetos .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .projetos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
+    }
+    .projeto-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s;
+    }
+    .projeto-card:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    }
+    .projeto-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .projeto-card h3 {
+      margin: 15px 20px 5px;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+    .projeto-card p {
+      margin: 0 20px 15px;
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+    .projeto-card a {
+      margin: 0 20px 20px;
+      font-weight: 600;
+      color: var(--text-color);
+      text-decoration: none;
+      border: 2px solid var(--accent-color);
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+      text-align: center;
+      display: inline-block;
+    }
+    .projeto-card a:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    /* Contato */
+    #contato {
+      max-width: 600px;
+      margin: auto;
+    }
+    #contato .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    #contato p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    .form-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .form-contato input,
+    .form-contato textarea {
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      resize: vertical;
+      font-family: inherit;
+    }
+    body.light .form-contato input,
+    body.light .form-contato textarea {
+      border: 1px solid #999;
+      background-color: #fff;
+      color: var(--text-color);
+    }
+    .form-contato input:focus,
+    .form-contato textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 5px var(--accent-color);
+    }
+    .form-contato button {
+      background-color: var(--accent-color);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .form-contato button:hover {
+      background-color: #544bc4;
+    }
+
+    /* Responsividade simples */
+    @media (max-width: 600px) {
+      #inicio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .intro-text {
+        max-width: 100%;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fundo de partículas -->
+  <div id="particles-js"></div>
+
+  <!-- Botão de alternância de tema -->
+  <button id="theme-toggle" title="Alternar tema">🌙</button>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="header-content">
+      <h1>Luiz Augusto</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#experiencias">Experiências</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section id="inicio">
+      <img src="Imagem do WhatsApp de 2025-05-24 à(s) 11.47.10_880f67c7 - Copia.jpg" alt="Foto Luiz Augusto" class="foto-perfil" />
+      <div class="intro-text">
+        <h1>Luiz Augusto</h1>
+        <h3>Desenvolvedor Web & Analista de Dados</h3>
+        <p>
+          Profissional de Tecnologia da Informação focado em Análise de Dados, utilizando Python, SQL, Power BI e Excel para transformar dados em insights estratégicos. Desenvolvo projetos autorais nas áreas de esportes e games, além de criar conteúdos educativos com abordagem visual e criativa. Sempre em busca de aprendizado e novos desafios na área de TI.
+        </p>
+      </div>
+
+      <div class="contato-info">
+        <div class="contato-item" title="Telefone">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.54.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.54 1 1 0 01-.21 1.11z"/></svg>
+          <span>(65) 99211-9035</span>
+        </div>
+        <div class="contato-item" title="E-mail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/></svg>
+          <span>luizaugustoo2019@gmail.com</span>
+        </div>
+        <div class="contato-item" title="Localização">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 112.5-2.5 2.5 2.5 0 01-2.5 2.5z"/></svg>
+          <span>Lucas do Rio Verde - MT</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="skill-list">
+        <span>Analista de Dados</span>
+        <span>Excel</span>
+        <span>Power Query</span>
+        <span>Power BI</span>
+        <span>DAX</span>
+        <span>SQL</span>
+        <span>Python</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>ETL</span>
+        <span>SAP</span>
+        <span>Coupa</span>
+      </div>
+    </section>
+
+    <section id="experiencias" class="experiencias-section">
+      <h2 class="section-title">Experiências</h2>
+
+      <div class="experiencia-card">
+        <div class="card-header">
+          <h3>Estagiário de Suprimentos</h3>
+          <span class="data-badge">2023 - 2024</span>
+        </div>
+        <p class="cargo">FS Bioenergia</p>
+        <p class="descricao">
+          <strong>Inteligência de Compras:</strong><br>
+          Análise e tratamento de dados com Excel, Power Query e Power BI para otimizar processos e apoiar decisões. Uso das plataformas Coupa e SAP para controle de compras. Suporte a fornecedores e reprocessamento de pedidos com erros.<br><br>
+          <strong>Compras e Negociação:</strong><br>
+          Negociação com fornecedores, apoio nos processos operacionais e aquisição de itens diversos, focando em eficiência, qualidade e redução de custos.
+        </p>
+      </div>
+
+      <div class="experiencia-card">
+        <div class="card-header">
+          <h3>GGF</h3>
+          <span class="data-badge">2024 - 2025</span>
+        </div>
+        <p class="cargo">Analista de Ti Jr.</p>
+        <p class="descricao">
+          Atuo como Analista de TI garantindo o funcionamento eficiente de sistemas e infraestrutura, com foco em manutenção preventiva e corretiva, suporte técnico e segurança da informação. Minha rotina envolve desde o diagnóstico e resolução de problemas técnicos até a otimização de recursos e apoio à tomada de decisão da gerência.
+        </p>
+      </div>
+
+      <div class="experiencia-card">
+        <div class="card-header">
+          <h3>Empresa: Engebel Construção Civil LTDA</h3>
+          <span class="data-badge">2017 - 2019</span>
+        </div>
+        <p class="cargo">Estágio em Desenvolvimento de sistemas</p>
+        <p class="descricao">
+          Atuei no desenvolvimento de interfaces web modernas e responsivas com foco em performance e experiência do usuário. Trabalhei com tecnologias como HTML, CSS, JavaScript, Bootstrap e WordPress, desenvolvendo páginas e soluções e-commerce com WooCommerce, Elementor e temas como Divi.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="section-title">Projetos</h2>
+
+      <div class="projetos-grid">
+        <div class="projeto-card">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Análise Financeira" class="projeto-img" />
+          <h3>Análise Financeira</h3>
+          <p>Relatório interativo com análise de faturamento, metas e desempenho por região.</p>
+          <a href="https://github.com/Drluiz1/DevLuiz/blob/main/Dashboard%20Projetos.pbix" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+
+        <div class="projeto-card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Dashboard de Vendas" class="projeto-img" />
+          <h3>Dashboard de Vendas</h3>
+          <p>Visualização de fluxo de caixa, custos fixos e variáveis com filtros dinâmicos.</p>
+          <a href="https://github.com/Drluiz1/DevLuiz/blob/main/Relat%C3%B3rio%20de%20Vendas.pbix" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+
+        <div class="projeto-card">
+          <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=400&q=80" alt="Indicadores de RH" class="projeto-img" />
+          <h3>Indicadores de RH</h3>
+          <p>Dashboard de turnover, absenteísmo e perfil de colaboradores.</p>
+          <a href="https://github.com/SeuUsuario/indicadores-rh-powerbi" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+
+        <div class="projeto-card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Sistema de vendas Agro" class="projeto-img" />
+          <h3>Sistema de vendas Agro</h3>
+          <p>Sistema simples em Java para listar produtos, registrar vendas e gerar relatórios de vendas e estoque.</p>
+          <a href="https://github.com/Drluiz1/DevLuiz/blob/main/Sistema%20De%20Vendas%20Agro.java" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+
+        <div class="projeto-card">
+          <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=400&q=80" alt="Chatbot" class="projeto-img" />
+          <h3>Chatbot</h3>
+          <p>Assistente virtual para apoiar programadores nas dúvidas e tarefas diárias.</p>
+          <a href="https://github.com/Drluiz1/DevLuiz/blob/main/ChatBot.rar" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+
+        <div class="projeto-card">
+          <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?auto=format&fit=crop&w=400&q=80" alt="Página de Login" class="projeto-img" />
+          <h3>Página de Login e Senha</h3>
+          <p>Página de login com HTML, CSS e JavaScript para autenticação básica com feedback ao usuário.</p>
+          <a href="https://github.com/Drluiz1/DevLuiz/blob/main/My.html" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p>Preencha o formulário abaixo e retornarei o mais breve possível.</p>
+
+      <form class="form-contato" action="https://formsubmit.co/luizaugustoo2019@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+        <input type="text" name="name" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#6c63ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#6c63ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 3,
+          direction: "none",
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- Script alternador tema -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function setTheme(theme) {
+      if (theme === 'light') {
+        document.body.classList.add('light');
+        toggleBtn.textContent = '🌙';
+      } else {
+        document.body.classList.remove('light');
+        toggleBtn.textContent = '☀️';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isLight = document.body.classList.contains('light');
+      setTheme(isLight ? 'dark' : 'light');
+    });
+
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+  </script>
+</body>
+</html>
